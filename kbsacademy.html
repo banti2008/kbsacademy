@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KBS Academy — KYP Classes, Gopalganj Bihar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Hind:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --saffron: #ff6b00;
+      --saffron2: #ff9a3c;
+      --green: #138808;
+      --green2: #1aad0a;
+      --blue: #1a237e;
+      --blue2: #283593;
+      --light: #fff8f0;
+      --white: #ffffff;
+      --gray: #666;
+      --lightgray: #f5f5f5;
+      --card: #ffffff;
+      --border: #ffe0c0;
+      --dark: #1a1a2e;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Hind', sans-serif;
+      background: var(--white);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      background: var(--blue);
+      padding: 8px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.82rem; color: rgba(255,255,255,0.85);
+    }
+    .topbar a { color: rgba(255,255,255,0.85); text-decoration: none; }
+    .topbar a:hover { color: var(--saffron2); }
+    .topbar-left { display: flex; gap: 24px; }
+    .topbar-left span { display: flex; align-items: center; gap: 5px; }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.1);
+      padding: 0 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+
+    .logo {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .logo-icon {
+      width: 48px; height: 48px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--saffron), var(--saffron2));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Baloo 2', cursive;
+      font-weight: 800; font-size: 1.3rem; color: white;
+      box-shadow: 0 4px 12px rgba(255,107,0,0.3);
+    }
+    .logo-text { line-height: 1.2; }
+    .logo-name {
+      font-family: 'Baloo 2', cursive;
+      font-weight: 800; font-size: 1.2rem; color: var(--blue);
+    }
+    .logo-sub { font-size: 0.72rem; color: var(--saffron); font-weight: 600; letter-spacing: 0.5px; }
+
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      color: var(--dark); text-decoration: none;
+      font-size: 0.92rem; font-weight: 500;
+      padding: 6px 0; border-bottom: 2px solid transparent;
+      transition: all 0.3s;
+    }
+    .nav-links a:hover { color: var(--saffron); border-bottom-color: var(--saffron); }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--saffron), var(--saffron2));
+      color: white; padding: 10px 24px; border-radius: 8px;
+      font-weight: 700; font-size: 0.9rem; text-decoration: none;
+      box-shadow: 0 4px 14px rgba(255,107,0,0.3);
+      transition: all 0.3s;
+    }
+    .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,107,0,0.4); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue2) 50%, #1565c0 100%);
+      padding: 80px 40px;
+      position: relative; overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 400px; height: 400px; border-radius: 50%;
+      background: rgba(255,107,0,0.12);
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: -60px; left: -60px;
+      width: 300px; height: 300px; border-radius: 50%;
+      background: rgba(255,154,60,0.08);
+    }
+
+    .hero-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+      position: relative; z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,107,0,0.2); border: 1px solid rgba(255,107,0,0.4);
+      padding: 6px 16px; border-radius: 100px; margin-bottom: 20px;
+      font-size: 0.8rem; color: var(--saffron2); font-weight: 600;
+      letter-spacing: 0.5px;
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .hero h1 {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800; color: white; line-height: 1.2;
+      margin-bottom: 16px;
+      animation: fadeUp 0.7s 0.1s ease both;
+    }
+
+    .hero h1 span { color: var(--saffron2); }
+
+    .hero-desc {
+      color: rgba(255,255,255,0.8); font-size: 1rem;
+      line-height: 1.8; margin-bottom: 32px;
+      animation: fadeUp 0.7s 0.2s ease both;
+    }
+
+    .hero-btns {
+      display: flex; gap: 14px; flex-wrap: wrap;
+      animation: fadeUp 0.7s 0.3s ease both;
+    }
+
+    .btn-hero-primary {
+      background: linear-gradient(135deg, var(--saffron), var(--saffron2));
+      color: white; padding: 14px 32px; border-radius: 10px;
+      font-weight: 700; font-size: 1rem; text-decoration: none;
+      box-shadow: 0 6px 20px rgba(255,107,0,0.4);
+      transition: all 0.3s;
+    }
+    .btn-hero-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(255,107,0,0.5); }
+
+    .btn-hero-secondary {
+      background: rgba(255,255,255,0.1); color: white;
+      padding: 14px 32px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.3);
+      font-weight: 600; font-size: 1rem; text-decoration: none;
+      transition: all 0.3s;
+    }
+    .btn-hero-secondary:hover { background: rgba(255,255,255,0.2); }
+
+    /* HERO CARD */
+    .hero-card {
+      background: white; border-radius: 20px; padding: 32px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      animation: fadeUp 0.7s 0.4s ease both;
+    }
+
+    .hero-card h3 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.2rem; font-weight: 700; color: var(--blue);
+      margin-bottom: 20px; text-align: center;
+    }
+
+    .kyp-highlight {
+      background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+      border: 2px solid var(--saffron2); border-radius: 12px;
+      padding: 16px; text-align: center; margin-bottom: 20px;
+    }
+
+    .kyp-highlight .big { font-family: 'Baloo 2', cursive; font-size: 1.8rem; font-weight: 800; color: var(--saffron); }
+    .kyp-highlight .small { font-size: 0.82rem; color: var(--gray); margin-top: 2px; }
+
+    .hero-features { display: flex; flex-direction: column; gap: 10px; }
+    .hero-feat {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.88rem; color: var(--dark);
+    }
+    .hero-feat .check {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--green), var(--green2));
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 0.65rem; font-weight: 700; flex-shrink: 0;
+    }
+
+    .hero-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 12px; margin-top: 20px; padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat .num {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.5rem; font-weight: 800; color: var(--saffron);
+    }
+    .hero-stat .lbl { font-size: 0.72rem; color: var(--gray); }
+
+    /* ── SECTION COMMON ── */
+    .section-header { text-align: center; margin-bottom: 48px; }
+    .tag {
+      display: inline-block; font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--saffron); background: rgba(255,107,0,0.08);
+      padding: 4px 14px; border-radius: 100px; margin-bottom: 12px;
+    }
+    .section-header h2 {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 800; color: var(--blue); margin-bottom: 12px;
+    }
+    .section-header p { color: var(--gray); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+    /* ── KYP ABOUT ── */
+    #about {
+      padding: 80px 40px;
+      background: var(--lightgray);
+    }
+
+    .about-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+
+    .about-content h2 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 2rem; font-weight: 800; color: var(--blue);
+      margin-bottom: 16px;
+    }
+    .about-content h2 span { color: var(--saffron); }
+
+    .about-content p {
+      color: var(--gray); line-height: 1.8; margin-bottom: 20px; font-size: 0.95rem;
+    }
+
+    .about-points { display: flex; flex-direction: column; gap: 12px; }
+    .about-point {
+      display: flex; gap: 12px; align-items: flex-start;
+      background: white; border-radius: 10px; padding: 14px;
+      border-left: 4px solid var(--saffron);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .about-point .icon { font-size: 1.3rem; flex-shrink: 0; }
+    .about-point h4 { font-size: 0.9rem; font-weight: 700; color: var(--blue); margin-bottom: 3px; }
+    .about-point p { color: var(--gray); font-size: 0.83rem; margin: 0; }
+
+    /* KYP MODULES */
+    .kyp-modules {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+    }
+
+    .kyp-module {
+      background: white; border-radius: 12px; padding: 20px;
+      border: 2px solid #eee; transition: all 0.3s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .kyp-module:hover { border-color: var(--saffron); transform: translateY(-3px); }
+    .kyp-module .mod-icon { font-size: 2rem; margin-bottom: 10px; }
+    .kyp-module h4 { font-family: 'Baloo 2', cursive; font-size: 0.98rem; font-weight: 700; color: var(--blue); margin-bottom: 5px; }
+    .kyp-module p { font-size: 0.8rem; color: var(--gray); line-height: 1.5; }
+
+    /* ── FEATURES ── */
+    #features { padding: 80px 40px; }
+
+    .features-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .feat-card {
+      background: white; border-radius: 14px; padding: 28px;
+      border: 1px solid #eee;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      text-align: center; transition: all 0.3s;
+    }
+    .feat-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(255,107,0,0.15); border-color: var(--saffron); }
+
+    .feat-icon {
+      width: 64px; height: 64px; border-radius: 16px; margin: 0 auto 18px;
+      background: linear-gradient(135deg, rgba(255,107,0,0.1), rgba(255,154,60,0.15));
+      display: flex; align-items: center; justify-content: center; font-size: 2rem;
+    }
+    .feat-card h3 { font-family: 'Baloo 2', cursive; font-size: 1.05rem; font-weight: 700; color: var(--blue); margin-bottom: 8px; }
+    .feat-card p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
+
+    /* ── REGISTRATION ── */
+    #register {
+      padding: 80px 40px;
+      background: linear-gradient(135deg, #e3f2fd, #fff3e0);
+    }
+
+    .register-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1.3fr; gap: 60px; align-items: start;
+    }
+
+    .reg-info h2 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 2rem; font-weight: 800; color: var(--blue); margin-bottom: 12px;
+    }
+    .reg-info h2 span { color: var(--saffron); }
+    .reg-info p { color: var(--gray); line-height: 1.8; margin-bottom: 24px; font-size: 0.95rem; }
+
+    .reg-steps { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
+    .reg-step {
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .step-num {
+      width: 36px; height: 36px; flex-shrink: 0;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--saffron), var(--saffron2));
+      color: white; font-weight: 800; font-size: 0.9rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .reg-step h4 { font-size: 0.92rem; font-weight: 700; color: var(--blue); margin-bottom: 3px; }
+    .reg-step p { font-size: 0.82rem; color: var(--gray); }
+
+    .cert-box {
+      background: linear-gradient(135deg, var(--blue), var(--blue2));
+      border-radius: 14px; padding: 24px; color: white; text-align: center;
+    }
+    .cert-box .cert-icon { font-size: 3rem; margin-bottom: 12px; }
+    .cert-box h4 { font-family: 'Baloo 2', cursive; font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+    .cert-box p { font-size: 0.82rem; opacity: 0.85; line-height: 1.6; }
+
+    /* FORM */
+    .form-card {
+      background: white; border-radius: 20px;
+      padding: 40px; box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+      border: 1px solid #eee;
+    }
+
+    .form-head {
+      background: linear-gradient(135deg, var(--blue), var(--blue2));
+      margin: -40px -40px 32px;
+      padding: 28px 40px; border-radius: 20px 20px 0 0;
+      color: white;
+    }
+    .form-head h3 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.4rem; font-weight: 800; margin-bottom: 4px;
+    }
+    .form-head p { font-size: 0.85rem; opacity: 0.85; }
+
+    .form-section-title {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--saffron);
+      margin: 24px 0 14px; padding-bottom: 6px;
+      border-bottom: 2px solid rgba(255,107,0,0.15);
+    }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block; font-size: 0.82rem; font-weight: 600;
+      color: #555; margin-bottom: 6px;
+    }
+    .form-group label span { color: var(--saffron); }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: 11px 14px;
+      border: 1.5px solid #ddd; border-radius: 8px;
+      font-family: 'Hind', sans-serif;
+      font-size: 0.92rem; color: var(--dark);
+      outline: none; transition: border-color 0.3s, box-shadow 0.3s;
+      background: white;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--saffron);
+      box-shadow: 0 0 0 3px rgba(255,107,0,0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+
+    .radio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .radio-opt {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 12px; border-radius: 8px;
+      border: 1.5px solid #ddd; cursor: pointer;
+      font-size: 0.85rem; transition: all 0.3s;
+    }
+    .radio-opt input { accent-color: var(--saffron); }
+    .radio-opt:has(input:checked) {
+      border-color: var(--saffron);
+      background: rgba(255,107,0,0.06);
+      color: var(--saffron); font-weight: 600;
+    }
+
+    .select-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .select-btn {
+      padding: 10px; border-radius: 8px; border: 1.5px solid #ddd;
+      text-align: center; cursor: pointer; font-size: 0.82rem;
+      transition: all 0.3s; background: white; font-family: 'Hind', sans-serif;
+    }
+    .select-btn.active {
+      border-color: var(--saffron); background: rgba(255,107,0,0.06);
+      color: var(--saffron); font-weight: 600;
+    }
+    .select-btn:hover { border-color: var(--saffron2); }
+
+    .agree-wrap {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.83rem; color: var(--gray); margin: 20px 0;
+      padding: 14px; background: #f9f9f9; border-radius: 8px;
+    }
+    .agree-wrap input { accent-color: var(--saffron); margin-top: 2px; flex-shrink: 0; }
+
+    .submit-btn {
+      width: 100%; padding: 16px;
+      background: linear-gradient(135deg, var(--saffron), var(--saffron2));
+      color: white; border: none; border-radius: 10px; cursor: pointer;
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.1rem; font-weight: 700;
+      box-shadow: 0 6px 20px rgba(255,107,0,0.35);
+      transition: all 0.3s;
+    }
+    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(255,107,0,0.45); }
+    .submit-btn:active { transform: translateY(0); }
+
+    /* SUCCESS */
+    .success-msg {
+      display: none; text-align: center; padding: 20px 0;
+    }
+    .success-icon {
+      width: 80px; height: 80px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--green), var(--green2));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem; margin: 0 auto 20px;
+      box-shadow: 0 8px 24px rgba(19,136,8,0.3);
+    }
+    .success-msg h3 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.6rem; font-weight: 800; color: var(--blue); margin-bottom: 10px;
+    }
+    .success-msg p { color: var(--gray); font-size: 0.92rem; line-height: 1.7; }
+    .success-id {
+      display: inline-block; margin-top: 14px;
+      background: #fff3e0; border: 1.5px solid var(--saffron2);
+      border-radius: 8px; padding: 10px 20px;
+      font-family: 'Baloo 2', cursive; font-size: 1rem; color: var(--saffron);
+      font-weight: 700;
+    }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials {
+      padding: 80px 40px;
+      background: var(--lightgray);
+    }
+
+    .testi-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .testi-card {
+      background: white; border-radius: 14px; padding: 28px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+      border: 1px solid #eee; transition: transform 0.3s;
+    }
+    .testi-card:hover { transform: translateY(-5px); }
+
+    .testi-stars { font-size: 1rem; margin-bottom: 12px; }
+    .testi-text {
+      font-size: 0.9rem; color: var(--gray);
+      line-height: 1.7; margin-bottom: 20px; font-style: italic;
+    }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-av {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--saffron), var(--saffron2));
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 800; font-size: 1.1rem; flex-shrink: 0;
+    }
+    .testi-name { font-weight: 700; font-size: 0.9rem; color: var(--dark); }
+    .testi-sub { font-size: 0.75rem; color: var(--saffron); font-weight: 600; }
+
+    /* ── CONTACT ── */
+    #contact {
+      padding: 80px 40px;
+      background: var(--blue);
+      color: white;
+    }
+
+    .contact-inner {
+      max-width: 900px; margin: 0 auto; text-align: center;
+    }
+
+    .contact-inner h2 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 2rem; font-weight: 800; margin-bottom: 12px;
+    }
+    .contact-inner h2 span { color: var(--saffron2); }
+    .contact-inner p { opacity: 0.8; margin-bottom: 40px; }
+
+    .contact-cards {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 14px; padding: 28px 20px; text-align: center;
+      transition: all 0.3s;
+    }
+    .contact-card:hover { background: rgba(255,255,255,0.14); transform: translateY(-4px); }
+    .contact-card .c-icon { font-size: 2rem; margin-bottom: 12px; }
+    .contact-card h4 { font-size: 0.8rem; font-weight: 600; opacity: 0.7; margin-bottom: 6px; letter-spacing: 1px; text-transform: uppercase; }
+    .contact-card p { font-size: 0.95rem; font-weight: 600; }
+    .contact-card a { color: var(--saffron2); text-decoration: none; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      padding: 40px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.5rem; font-weight: 800; color: var(--saffron2); margin-bottom: 8px;
+    }
+    footer p { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
+    .footer-links { display: flex; justify-content: center; gap: 24px; margin: 12px 0; }
+    .footer-links a { color: rgba(255,255,255,0.5); font-size: 0.83rem; text-decoration: none; }
+    .footer-links a:hover { color: var(--saffron2); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .topbar { display: none; }
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 60px 20px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      #about, #features, #register, #testimonials, #contact { padding: 60px 20px; }
+      .about-grid, .register-inner { grid-template-columns: 1fr; gap: 40px; }
+      .form-row, .radio-grid, .select-grid { grid-template-columns: 1fr; }
+      .kyp-modules { grid-template-columns: 1fr; }
+      .form-card { padding: 24px; }
+      .form-head { margin: -24px -24px 28px; padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <span>📍 Gopalganj, Bihar</span>
+    <span>📞 <a href="tel:+919876543210">+91 98765 43210</a></span>
+    <span>✉️ <a href="mailto:kbsacademy@gmail.com">kbsacademy@gmail.com</a></span>
+  </div>
+  <div>🕐 Mon–Sat: 8AM – 8PM | KYP Batch Abhi Open Hai!</div>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">
+    <div class="logo-icon">KBS</div>
+    <div class="logo-text">
+      <div class="logo-name">KBS Academy</div>
+      <div class="logo-sub">KYP Classes — Gopalganj, Bihar</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">KYP Kya Hai</a></li>
+    <li><a href="#features">Humare Baare Mein</a></li>
+    <li><a href="#testimonials">Results</a></li>
+    <li><a href="#register">Registration</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#register" class="nav-cta">🎓 Abhi Register Karo</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">🏆 Gopalganj ka No.1 KYP Coaching Center</div>
+      <h1>KBS Academy mein<br/><span>KYP Classes</span> Join Karo</h1>
+      <p class="hero-desc">
+        <strong style="color:var(--saffron2)">Kushal Yuva Program (KYP)</strong> — Bihar Sarkar ki yojana jo aapko computer skills, soft skills aur English sikhayegi. Certificate milega, job milegi. KBS Academy, Gopalganj ka sabse bharosemand KYP coaching center.
+      </p>
+      <div class="hero-btns">
+        <a href="#register" class="btn-hero-primary">📝 Free Registration Karo</a>
+        <a href="#about" class="btn-hero-secondary">KYP Kya Hai? Jaano →</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>🎯 KYP Batch — 2025</h3>
+      <div class="kyp-highlight">
+        <div class="big">FREE</div>
+        <div class="small">Bihar Sarkar ke taraf se — Koi fees nahi!</div>
+      </div>
+      <div class="hero-features">
+        <div class="hero-feat"><div class="check">✓</div> Computer Fundamentals & MS Office</div>
+        <div class="hero-feat"><div class="check">✓</div> Internet & Email Skills</div>
+        <div class="hero-feat"><div class="check">✓</div> English Speaking & Communication</div>
+        <div class="hero-feat"><div class="check">✓</div> Soft Skills & Personality Development</div>
+        <div class="hero-feat"><div class="check">✓</div> Government Certificate milega</div>
+        <div class="hero-feat"><div class="check">✓</div> Job Placement Support</div>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">500+</div><div class="lbl">Students Trained</div></div>
+        <div class="hero-stat"><div class="num">95%</div><div class="lbl">Pass Rate</div></div>
+        <div class="hero-stat"><div class="num">3+</div><div class="lbl">Saal Ka Experience</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT KYP -->
+<section id="about">
+  <div class="about-grid" style="max-width:1100px;margin:0 auto;">
+    <div class="about-content">
+      <div class="tag">KYP Kya Hai?</div>
+      <h2><span>Kushal Yuva Program</span><br/>Bihar Sarkar ki Yojana</h2>
+      <p>
+        Kushal Yuva Program (KYP) Bihar Sarkar ki ek free skill development yojana hai jo 15 se 25 saal ke yuvaon ke liye hai. Is program mein computer, communication aur soft skills sikhaye jaate hain taki aap job ke liye taiyar ho sako.
+      </p>
+      <p>
+        <strong>KBS Academy</strong> Gopalganj ka ek authorized KYP training center hai jahan expert teachers ke saath aap yeh course poora kar sakte hain aur Bihar Skill Development Mission (BSDM) ka official certificate pa sakte hain.
+      </p>
+      <div class="about-points">
+        <div class="about-point">
+          <span class="icon">📜</span>
+          <div>
+            <h4>Government Certified Course</h4>
+            <p>BSDM (Bihar Skill Development Mission) ka official certificate milega</p>
+          </div>
+        </div>
+        <div class="about-point">
+          <span class="icon">💰</span>
+          <div>
+            <h4>Bilkul Free — Koi Fees Nahi</h4>
+            <p>Bihar Sarkar is course ka poora kharcha uthati hai</p>
+          </div>
+        </div>
+        <div class="about-point">
+          <span class="icon">⏱️</span>
+          <div>
+            <h4>240 Ghante Ka Course</h4>
+            <p>3 mahine mein poori training, daily 3-4 ghante class</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="tag" style="text-align:center;display:block;margin-bottom:20px;">KYP Ke 4 Module</div>
+      <div class="kyp-modules">
+        <div class="kyp-module">
+          <div class="mod-icon">💻</div>
+          <h4>IT & Computer</h4>
+          <p>Computer basics, MS Office (Word, Excel, PowerPoint), Internet, Email</p>
+        </div>
+        <div class="kyp-module">
+          <div class="mod-icon">🗣️</div>
+          <h4>Communication</h4>
+          <p>English speaking, Hindi communication, presentation skills</p>
+        </div>
+        <div class="kyp-module">
+          <div class="mod-icon">🧠</div>
+          <h4>Soft Skills</h4>
+          <p>Personality development, time management, team work, leadership</p>
+        </div>
+        <div class="kyp-module">
+          <div class="mod-icon">💼</div>
+          <h4>Job Readiness</h4>
+          <p>Resume banana, interview tips, job portal, career guidance</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="section-header">
+    <div class="tag">KBS Academy</div>
+    <h2>Kyun Choose Karo KBS Academy?</h2>
+    <p>Gopalganj mein KYP training ke liye sabse trusted naam</p>
+  </div>
+  <div class="features-grid">
+    <div class="feat-card">
+      <div class="feat-icon">🎓</div>
+      <h3>Experienced Teachers</h3>
+      <p>Hamare sabhi teachers trained aur certified hain. Student-friendly teaching style.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🖥️</div>
+      <h3>Computer Lab</h3>
+      <p>Modern computer lab jahan pratyek student ko practice ka poora mauka milta hai.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📱</div>
+      <h3>Regular Tests</h3>
+      <p>Weekly tests aur mock exams se students poori tarah exam ke liye taiyar hote hain.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🏆</div>
+      <h3>High Pass Rate</h3>
+      <p>KBS Academy ka 95% se zyada students KYP exam mein first attempt mein pass karte hain.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">💼</div>
+      <h3>Placement Support</h3>
+      <p>Certificate ke baad job dhundhne mein hamare teachers ki poori madad milegi.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📍</div>
+      <h3>Gopalganj Mein</h3>
+      <p>Shahar ke center mein located, easy transport aur safe environment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTRATION FORM -->
+<section id="register">
+  <div class="register-inner">
+    <div class="reg-info">
+      <div class="tag">Registration Open</div>
+      <h2>Aaj Hi <span>KYP</span><br/>Join Karo!</h2>
+      <p>2025 batch ke liye seats limited hain. Abhi free online registration karo aur KBS Academy mein apna seat pakad lo.</p>
+
+      <div class="reg-steps">
+        <div class="reg-step">
+          <div class="step-num">1</div>
+          <div>
+            <h4>Online Form Bharo</h4>
+            <p>Neeche diya gaya form fill karo — sirf 2 minute lagenge</p>
+          </div>
+        </div>
+        <div class="reg-step">
+          <div class="step-num">2</div>
+          <div>
+            <h4>Call Aayegi</h4>
+            <p>Hamare team ka call aayega — batch aur time confirm hoga</p>
+          </div>
+        </div>
+        <div class="reg-step">
+          <div class="step-num">3</div>
+          <div>
+            <h4>Documents Laao</h4>
+            <p>Aadhar Card, Photo aur 10th/12th certificate laao</p>
+          </div>
+        </div>
+        <div class="reg-step">
+          <div class="step-num">4</div>
+          <div>
+            <h4>Classes Start!</h4>
+            <p>Training shuru aur 3 mahine mein certificate paao</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-box">
+        <div class="cert-icon">🏅</div>
+        <h4>Bihar Sarkar ka Official Certificate</h4>
+        <p>Course complete karne par BSDM certificate milega jo puri Bihar mein recognized hai aur sarkari / private job mein kaam aata hai.</p>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-card">
+      <div class="form-head">
+        <h3>📝 KYP Registration Form</h3>
+        <p>KBS Academy, Gopalganj — 2025 Batch</p>
+      </div>
+
+      <div id="formBody">
+        <div class="form-section-title">👤 Personal Information</div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Pehla Naam <span>*</span></label>
+            <input type="text" id="fname" placeholder="Aapka naam"/>
+          </div>
+          <div class="form-group">
+            <label>Pita / Pati ka Naam <span>*</span></label>
+            <input type="text" id="guardname" placeholder="Pita ji ka naam"/>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Mobile Number <span>*</span></label>
+            <input type="tel" id="phone" placeholder="+91 98765 43210" maxlength="13"/>
+          </div>
+          <div class="form-group">
+            <label>Date of Birth <span>*</span></label>
+            <input type="date" id="dob"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Aadhar Card Number <span>*</span></label>
+          <input type="text" id="aadhar" placeholder="XXXX XXXX XXXX" maxlength="14"/>
+        </div>
+
+        <div class="form-section-title">📚 Education Details</div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Sabse Badi Qualification <span>*</span></label>
+            <select id="qual">
+              <option value="" disabled selected>-- Select karo --</option>
+              <option>10th Pass (Matric)</option>
+              <option>12th Pass (Inter)</option>
+              <option>Graduation (BA/BSc/BCom)</option>
+              <option>Post Graduation</option>
+              <option>ITI / Diploma</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Passing Year <span>*</span></label>
+            <select id="pyear">
+              <option value="" disabled selected>-- Year --</option>
+              <option>2025</option><option>2024</option><option>2023</option>
+              <option>2022</option><option>2021</option><option>2020</option>
+              <option>2019</option><option>2018 ya pehle</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-section-title">⏰ Batch Preference</div>
+
+        <div class="form-group">
+          <label>Kaunsa Batch Suit Karta Hai? <span>*</span></label>
+          <div class="radio-grid">
+            <label class="radio-opt"><input type="radio" name="batch" value="Morning"/> 🌅 Morning (7–10 AM)</label>
+            <label class="radio-opt"><input type="radio" name="batch" value="Afternoon"/> ☀️ Afternoon (12–3 PM)</label>
+            <label class="radio-opt"><input type="radio" name="batch" value="Evening"/> 🌙 Evening (4–7 PM)</label>
+            <label class="radio-opt"><input type="radio" name="batch" value="Weekend"/> 📅 Weekend Only</label>
+          </div>
+        </div>
+
+        <div class="form-section-title">🏠 Address Details</div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Gaon / Mohalla <span>*</span></label>
+            <input type="text" id="village" placeholder="Gaon ka naam"/>
+          </div>
+          <div class="form-group">
+            <label>Block / Thana <span>*</span></label>
+            <input type="text" id="block" placeholder="Block ka naam"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Jila</label>
+          <input type="text" id="district" value="Gopalganj" readonly style="background:#f5f5f5;color:#999;"/>
+        </div>
+
+        <div class="form-group">
+          <label>Koi Sawaal Ya Baat</label>
+          <textarea id="msg" placeholder="Kuch poochna ho to yahan likhein..."></textarea>
+        </div>
+
+        <div class="agree-wrap">
+          <input type="checkbox" id="terms"/>
+          <label for="terms">Main KBS Academy ke niyam se sahmat hoon aur samajhta/samajhti hoon ki KYP ek Bihar Sarkar ki free yojana hai. Mujhe call/WhatsApp par update bhejne ki anumati hai.</label>
+        </div>
+
+        <button class="submit-btn" onclick="handleSubmit()">
+          🎓 Register Karo — KYP 2025 Batch
+        </button>
+      </div>
+
+      <div class="success-msg" id="successBox">
+        <div class="success-icon">✓</div>
+        <h3>Registration Ho Gaya! 🎉</h3>
+        <p>
+          Bahut accha! Aapka KYP registration KBS Academy mein ho gaya hai.<br/>
+          Hamare teacher 24 ghante mein aapko call karenge.<br/>
+          Documents tayar rakhein: <strong>Aadhar Card, Photo, 10th Certificate</strong>
+        </p>
+        <div class="success-id" id="regId">Registration ID: KBS-2025-0000</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-header">
+    <div class="tag">Student Reviews</div>
+    <h2>Hamare Students Kya Kehte Hain</h2>
+    <p>Gopalganj ke jinke life mein KYP ne badlaav laaya</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testi-text">"KBS Academy se KYP karne ke baad mujhe Patna mein ek private company mein data entry ki job mili. Computer sikhne se mera confidence bhi badha. Bahut bahut shukriya!"</p>
+      <div class="testi-author">
+        <div class="testi-av">P</div>
+        <div>
+          <div class="testi-name">Priya Kumari</div>
+          <div class="testi-sub">KYP Batch 2024 — Gopalganj</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testi-text">"Pehle mujhe computer ka kuch nahi pata tha. KBS Academy mein 3 mahine sikhne ke baad ab main MS Excel aur Internet achhe se use kar leta hoon. Certificate bhi mila!"</p>
+      <div class="testi-author">
+        <div class="testi-av">R</div>
+        <div>
+          <div class="testi-name">Rahul Singh</div>
+          <div class="testi-sub">KYP Batch 2024 — Gopalganj</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testi-text">"Teachers bahut achhe hain, sabse alag sikhate hain. English aur soft skills ka modul bahut kaam aaya interview mein. Gopalganj mein best KYP center hai KBS Academy."</p>
+      <div class="testi-author">
+        <div class="testi-av">S</div>
+        <div>
+          <div class="testi-name">Sunita Devi</div>
+          <div class="testi-sub">KYP Batch 2023 — Gopalganj</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="tag" style="background:rgba(255,154,60,0.2);color:var(--saffron2)">Sampark Karein</div>
+    <h2>KBS Academy se <span>Sampark Karo</span></h2>
+    <p>Koi bhi sawaal ho, call karo ya WhatsApp karo — hum hamesha available hain</p>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="c-icon">📞</div>
+        <h4>Call Karo</h4>
+        <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+      </div>
+      <div class="contact-card">
+        <div class="c-icon">💬</div>
+        <h4>WhatsApp</h4>
+        <p><a href="https://wa.me/919876543210">+91 98765 43210</a></p>
+      </div>
+      <div class="contact-card">
+        <div class="c-icon">📍</div>
+        <h4>Pata</h4>
+        <p>KBS Academy, Gopalganj, Bihar</p>
+      </div>
+      <div class="contact-card">
+        <div class="c-icon">🕐</div>
+        <h4>Time</h4>
+        <p>Mon–Sat: 8AM – 8PM</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">KBS Academy</div>
+  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#about">KYP Kya Hai</a>
+    <a href="#register">Registration</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <p>© 2025 KBS Academy, Gopalganj, Bihar. Sabhi adhikar surakshit hain.</p>
+  <p style="margin-top:6px;">Authorized KYP Training Center — Bihar Skill Development Mission</p>
+</footer>
+
+<script>
+  function handleSubmit() {
+    const fname = document.getElementById('fname').value.trim();
+    const guardname = document.getElementById('guardname').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const dob = document.getElementById('dob').value;
+    const aadhar = document.getElementById('aadhar').value.trim();
+    const qual = document.getElementById('qual').value;
+    const pyear = document.getElementById('pyear').value;
+    const village = document.getElementById('village').value.trim();
+    const block = document.getElementById('block').value.trim();
+    const batch = document.querySelector('input[name="batch"]:checked');
+    const terms = document.getElementById('terms').checked;
+
+    let errors = [];
+    if (!fname) errors.push('Pehla naam');
+    if (!guardname) errors.push('Pita/Pati ka naam');
+    if (!phone || phone.length < 10) errors.push('Sahi mobile number');
+    if (!dob) errors.push('Date of birth');
+    if (!aadhar || aadhar.length < 12) errors.push('Aadhar number');
+    if (!qual) errors.push('Qualification');
+    if (!pyear) errors.push('Passing year');
+    if (!village) errors.push('Gaon/Mohalla');
+    if (!block) errors.push('Block/Thana');
+    if (!batch) errors.push('Batch preference');
+    if (!terms) errors.push('Terms se agree karo');
+
+    if (errors.length > 0) {
+      alert('Ye fields fill karo:\n' + errors.join('\n'));
+      return;
+    }
+
+    // Generate Registration ID
+    const id = 'KBS-2025-' + Math.floor(1000 + Math.random() * 9000);
+    document.getElementById('regId').textContent = 'Registration ID: ' + id;
+
+    document.getElementById('formBody').style.display = 'none';
+    document.getElementById('successBox').style.display = 'block';
+    document.getElementById('register').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  // Aadhar format
+  document.getElementById('aadhar').addEventListener('input', function() {
+    let val = this.value.replace(/\D/g,'').substring(0,12);
+    this.value = val.replace(/(\d{4})(?=\d)/g,'$1 ').trim();
+  });
+</script>
+</body>
+</html>
